@@ -1,0 +1,31 @@
+<%- include('header') %>
+
+<!-- 注册 -->
+<div class="reg-form">
+            <form method="post" action="/reg" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="uesername">用户名</label>
+                <input type="text" class="form-control" id="uesername" placeholder="起个名字呀" name="name">
+              </div>
+              
+              <div class="form-group">
+                <label for="exampleInputPassword1">密码</label>
+                <input type="password" class="form-control" id="password" placeholder="密码只有你知道" name="password">
+              </div>
+
+              <div class="form-group">
+                <label for="re-password">确认密码</label>
+                <input type="password" class="form-control" id="re_password" placeholder="再输一遍" name="re_password">
+              </div>
+
+              <div class="form-group">
+                  <label for="gravatar">头像</label>
+                  <input type="file" name="gravatar" required>
+              </div>
+        
+              <button type="submit" class="btn btn-primary btn-block">立即注册</button>
+            </form>
+                    
+                </div>
+
+<%- include('footer') %>

@@ -1,0 +1,1 @@
+SET DEBUG=blog:* & supervisor ./bin/www

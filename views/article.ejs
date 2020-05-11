@@ -1,0 +1,30 @@
+<%- include('header') %>
+    <!-- 文章 -->
+    <div class="post">
+
+        <div class="post_title">
+            <h2><%= post.title %></h2>
+            <div class="post_infor">
+                <div class="post_date"><%= post.postDate.toLocaleString() %></div>
+                <div class="author"><%= post.author.name %></div>
+                <div class="pv"><%= post.pv %> 次浏览</div>
+                <% if(user && post.author.name == user.name) { %>
+                    <a href="/edit/<%= post._id %>"><div class="glyphicon glyphicon-pencil" aria-hidden="true">编辑</div></a>
+                    <a href="/delete/<%= post._id %>"><div class="glyphicon glyphicon-trash" aria-hidden="true">删除</div></a>
+                <% } %>
+            </div>
+        </div>
+
+        <div class="post_content">
+            <pre><%- post.content %></pre>
+        </div>
+
+    </div>
+
+    <% if(post.comments.length > 0) { %>
+        <%- include('comments', { comments: post.comments }) %>
+    <% } %>
+
+<%- include('comment', { post: post }) %>
+
+<%- include('footer') %>

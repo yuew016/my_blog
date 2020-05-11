@@ -1,0 +1,10 @@
+<div class="comment">
+    <div class="comment_intro">评论</div>
+    <form action="/comment/<%= post._id %>" method="post">
+        <div class="form-group">
+            <label for="comment" class="sr-only">评论</label>
+            <textarea class="form-control" rows="10" placeholder="谈谈你的看法吧(*^__^*) ……" id="content" name="comment" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">发表</button>
+    </form>
+</div>

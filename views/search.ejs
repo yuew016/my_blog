@@ -1,0 +1,20 @@
+<%- include('header') %>
+<!-- 搜索列表 -->
+<div class="post-list">
+
+    <div class="search">
+        <span>> 搜索：<%= keyword %></span>
+    </div>
+    <% posts.forEach(function(post) { %>
+        <div class="post-cell">
+            <a href="#" class="gravatar">
+                <img src="<%= post.author.gravatar %>" alt="头像">
+            </a>
+            <div class="post-infor">
+                <a href="/post/<%= post._id %>"><div class="title"><%= post.title %></div></a>
+                <div class="edit-date visible-lg-inline-block"><%= post.postDate.toLocaleDateString() %></div>
+            </div>
+        </div>
+    <% }) %>
+</div>
+<%- include('footer') %>

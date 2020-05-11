@@ -1,0 +1,19 @@
+<div class="comments">
+    <div class="comments_count"><%= comments.length %> 评论</div>
+    <div class="comments_list">
+        <% comments.forEach(function(comment, index) { %>
+            <div class="comments_cell">
+                <div class="comments_infor">
+                    <a href="/" class="comments_gravatar">
+                        <img src="/<%= comment.author.gravatar %>" alt="头像">
+                    </a>
+                    <span><%= comment.author.name %></span>
+                    <span><%= comment.date.toLocaleString() %>：</span>
+                </div>
+                <div class="comments_content">
+                    <pre_1><%- comment.content %></pre_1>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
